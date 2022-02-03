@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IN2UModelStoreContainer" CdmEntityContainer="IN2UEntities">
+    <EntitySetMapping Name="VwHS_Contacts">
+      <EntityTypeMapping TypeName="IN2UModel.VwHS_Contacts">
+        <MappingFragment StoreEntitySet="VwHS_Contacts">
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Vid" ColumnName="Vid" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferrerInfoes">
+      <EntityTypeMapping TypeName="IN2UModel.ReferrerInfo">
+        <MappingFragment StoreEntitySet="ReferrerInfo">
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="HubSpotVid" ColumnName="HubSpotVid" />
+          <ScalarProperty Name="UserGroup" ColumnName="UserGroup" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="HubSpotId" ColumnName="HubSpotId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="RefUserId" ColumnName="RefUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkerInfoes">
+      <EntityTypeMapping TypeName="IN2UModel.WorkerInfo">
+        <MappingFragment StoreEntitySet="WorkerInfo">
+          <ScalarProperty Name="Promo" ColumnName="Promo" />
+          <ScalarProperty Name="RefPaidMethod" ColumnName="RefPaidMethod" />
+          <ScalarProperty Name="RefPaidDate" ColumnName="RefPaidDate" />
+          <ScalarProperty Name="RefPaidAmount" ColumnName="RefPaidAmount" />
+          <ScalarProperty Name="RefPaidStatus" ColumnName="RefPaidStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="TerminateReason" ColumnName="TerminateReason" />
+          <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+          <ScalarProperty Name="WorkEndDate" ColumnName="WorkEndDate" />
+          <ScalarProperty Name="WorkStartDate" ColumnName="WorkStartDate" />
+          <ScalarProperty Name="ReferralStatus" ColumnName="ReferralStatus" />
+          <ScalarProperty Name="ReferredDate" ColumnName="ReferredDate" />
+          <ScalarProperty Name="ReferredCompany" ColumnName="ReferredCompany" />
+          <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+          <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+          <ScalarProperty Name="ContactEmployeeNo" ColumnName="ContactEmployeeNo" />
+          <ScalarProperty Name="InvitationMethod" ColumnName="InvitationMethod" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactVid" ColumnName="ContactVid" />
+          <ScalarProperty Name="RefUserId" ColumnName="RefUserId" />
+          <ScalarProperty Name="WorkerID" ColumnName="WorkerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

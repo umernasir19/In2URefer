@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IN2UModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ReferrerInfo">
+          <Key>
+            <PropertyRef Name="RefUserId" />
+          </Key>
+          <Property Name="RefUserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="HubSpotId" Type="nvarchar" MaxLength="100" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="HubSpotVid" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="DateChanged" Type="datetime" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="30" />
+          <Property Name="State" Type="nvarchar" MaxLength="15" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="VwHS_Contacts">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vid" Type="int" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="20" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="nvarchar" MaxLength="30" />
+          <Property Name="LastModifiedDate" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="WorkerInfo">
+          <Key>
+            <PropertyRef Name="WorkerID" />
+          </Key>
+          <Property Name="WorkerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RefUserId" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactVid" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="30" />
+          <Property Name="InvitationMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactEmployeeNo" Type="int" />
+          <Property Name="ContactFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReferredCompany" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReferredDate" Type="datetime" />
+          <Property Name="ReferralStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="WorkStartDate" Type="datetime" />
+          <Property Name="WorkEndDate" Type="datetime" />
+          <Property Name="WorkStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="TerminateReason" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="RefPaidStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="RefPaidAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RefPaidDate" Type="datetime" />
+          <Property Name="RefPaidMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="Promo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="IN2UModelStoreContainer">
+          <EntitySet Name="ReferrerInfo" EntityType="Self.ReferrerInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VwHS_Contacts" EntityType="Self.VwHS_Contacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkerInfo" EntityType="Self.WorkerInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IN2UModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="IN2UEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VwHS_Contacts" EntityType="IN2UModel.VwHS_Contacts" />
+          <EntitySet Name="ReferrerInfoes" EntityType="IN2UModel.ReferrerInfo" />
+          <EntitySet Name="WorkerInfoes" EntityType="IN2UModel.WorkerInfo" />
+        </EntityContainer>
+        <EntityType Name="VwHS_Contacts">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vid" Type="Int32" Nullable="false" />
+          <Property Name="UserType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LastModifiedDate" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReferrerInfo">
+          <Key>
+            <PropertyRef Name="RefUserId" />
+          </Key>
+          <Property Name="RefUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HubSpotId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HubSpotVid" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="DateChanged" Type="DateTime" Precision="3" />
+          <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WorkerInfo">
+          <Key>
+            <PropertyRef Name="WorkerID" />
+          </Key>
+          <Property Name="WorkerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RefUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactVid" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="InvitationMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactEmployeeNo" Type="Int32" />
+          <Property Name="ContactFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReferredCompany" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ReferredDate" Type="DateTime" Precision="3" />
+          <Property Name="ReferralStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WorkStartDate" Type="DateTime" Precision="3" />
+          <Property Name="WorkEndDate" Type="DateTime" Precision="3" />
+          <Property Name="WorkStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TerminateReason" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RefPaidStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RefPaidAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RefPaidDate" Type="DateTime" Precision="3" />
+          <Property Name="RefPaidMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Promo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IN2UModelStoreContainer" CdmEntityContainer="IN2UEntities">
+          <EntitySetMapping Name="VwHS_Contacts">
+            <EntityTypeMapping TypeName="IN2UModel.VwHS_Contacts">
+              <MappingFragment StoreEntitySet="VwHS_Contacts">
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Vid" ColumnName="Vid" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReferrerInfoes">
+            <EntityTypeMapping TypeName="IN2UModel.ReferrerInfo">
+              <MappingFragment StoreEntitySet="ReferrerInfo">
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="HubSpotVid" ColumnName="HubSpotVid" />
+                <ScalarProperty Name="UserGroup" ColumnName="UserGroup" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="HubSpotId" ColumnName="HubSpotId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RefUserId" ColumnName="RefUserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkerInfoes">
+            <EntityTypeMapping TypeName="IN2UModel.WorkerInfo">
+              <MappingFragment StoreEntitySet="WorkerInfo">
+                <ScalarProperty Name="Promo" ColumnName="Promo" />
+                <ScalarProperty Name="RefPaidMethod" ColumnName="RefPaidMethod" />
+                <ScalarProperty Name="RefPaidDate" ColumnName="RefPaidDate" />
+                <ScalarProperty Name="RefPaidAmount" ColumnName="RefPaidAmount" />
+                <ScalarProperty Name="RefPaidStatus" ColumnName="RefPaidStatus" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="TerminateReason" ColumnName="TerminateReason" />
+                <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+                <ScalarProperty Name="WorkEndDate" ColumnName="WorkEndDate" />
+                <ScalarProperty Name="WorkStartDate" ColumnName="WorkStartDate" />
+                <ScalarProperty Name="ReferralStatus" ColumnName="ReferralStatus" />
+                <ScalarProperty Name="ReferredDate" ColumnName="ReferredDate" />
+                <ScalarProperty Name="ReferredCompany" ColumnName="ReferredCompany" />
+                <ScalarProperty Name="ContactLastName" ColumnName="ContactLastName" />
+                <ScalarProperty Name="ContactFirstName" ColumnName="ContactFirstName" />
+                <ScalarProperty Name="ContactEmployeeNo" ColumnName="ContactEmployeeNo" />
+                <ScalarProperty Name="InvitationMethod" ColumnName="InvitationMethod" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactVid" ColumnName="ContactVid" />
+                <ScalarProperty Name="RefUserId" ColumnName="RefUserId" />
+                <ScalarProperty Name="WorkerID" ColumnName="WorkerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
