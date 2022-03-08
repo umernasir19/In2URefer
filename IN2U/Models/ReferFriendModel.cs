@@ -16,7 +16,7 @@ namespace IN2U.Models
         public string FirstName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public string MobilePhone { get; set; }
+        //public string MobilePhone { get; set; }
         public string CreateDate { get; set; }
         public string LastModifiedDate { get; set; }
     }

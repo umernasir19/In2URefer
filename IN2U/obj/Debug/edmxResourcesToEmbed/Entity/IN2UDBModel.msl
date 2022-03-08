@@ -42,6 +42,7 @@
     <EntitySetMapping Name="WorkerInfoes">
       <EntityTypeMapping TypeName="IN2UModel.WorkerInfo">
         <MappingFragment StoreEntitySet="WorkerInfo">
+          <ScalarProperty Name="ReminderSms" ColumnName="ReminderSms" />
           <ScalarProperty Name="Promo" ColumnName="Promo" />
           <ScalarProperty Name="RefPaidMethod" ColumnName="RefPaidMethod" />
           <ScalarProperty Name="RefPaidDate" ColumnName="RefPaidDate" />

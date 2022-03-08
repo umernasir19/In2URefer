@@ -37,5 +37,6 @@ namespace IN2U.Entity
         public Nullable<System.DateTime> RefPaidDate { get; set; }
         public string RefPaidMethod { get; set; }
         public string Promo { get; set; }
+        public Nullable<int> ReminderSms { get; set; }
     }
 }

@@ -86,3 +86,6 @@ C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Soluti
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\EntityFramework.SqlServer.dll
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\EntityFramework.xml
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\EntityFramework.SqlServer.xml
+C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\System.Web.Cors.dll
+C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\System.Web.Http.Cors.dll
+C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\System.Web.Http.Cors.xml

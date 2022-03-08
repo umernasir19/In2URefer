@@ -68,6 +68,7 @@
           <Property Name="RefPaidDate" Type="datetime" />
           <Property Name="RefPaidMethod" Type="nvarchar" MaxLength="50" />
           <Property Name="Promo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReminderSms" Type="int" />
         </EntityType>
         <EntityContainer Name="IN2UModelStoreContainer">
           <EntitySet Name="ReferrerInfo" EntityType="Self.ReferrerInfo" Schema="dbo" store:Type="Tables" />
@@ -146,6 +147,7 @@
           <Property Name="RefPaidDate" Type="DateTime" Precision="3" />
           <Property Name="RefPaidMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Promo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReminderSms" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -194,6 +196,7 @@
           <EntitySetMapping Name="WorkerInfoes">
             <EntityTypeMapping TypeName="IN2UModel.WorkerInfo">
               <MappingFragment StoreEntitySet="WorkerInfo">
+                <ScalarProperty Name="ReminderSms" ColumnName="ReminderSms" />
                 <ScalarProperty Name="Promo" ColumnName="Promo" />
                 <ScalarProperty Name="RefPaidMethod" ColumnName="RefPaidMethod" />
                 <ScalarProperty Name="RefPaidDate" ColumnName="RefPaidDate" />

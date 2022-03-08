@@ -63,6 +63,7 @@
     <Property Name="RefPaidDate" Type="datetime" />
     <Property Name="RefPaidMethod" Type="nvarchar" MaxLength="50" />
     <Property Name="Promo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReminderSms" Type="int" />
   </EntityType>
   <EntityContainer Name="IN2UModelStoreContainer">
     <EntitySet Name="ReferrerInfo" EntityType="Self.ReferrerInfo" Schema="dbo" store:Type="Tables" />

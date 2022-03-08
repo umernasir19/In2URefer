@@ -20,4 +20,10 @@ namespace IN2U.Models
         public string ZipCode { get; set; }
 
     }
+
+    public class Worker_SMS_Property
+    {
+        public int WorkerID { get; set; }
+        public int ReminderSms { get; set; }
+    }
 }
