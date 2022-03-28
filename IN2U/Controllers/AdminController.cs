@@ -54,7 +54,7 @@ namespace IN2U.Controllers
             try
             {
                 _db = new IN2UEntities();
-                var data = _db.Database.SqlQuery<Referree_Worker_ViewModel>("select A.Phone  'Referer_Phone',B.Phone  'Worker_Phone', * from ReferrerInfo A inner join WorkerInfo B on A.RefUSERID=B.RefUserId Order By B.DateCreated DESC")
+                var data = _db.Database.SqlQuery<Referree_Worker_ViewModel>("select A.Phone  'Referer_Phone',B.Phone  'Worker_Phone', * from ReferrerInfo A left join WorkerInfo B on A.RefUSERID=B.RefUserId Order By B.DateCreated DESC")
                             .ToList().OrderByDescending(p=>p.DateCreated);
                 var response = new APIResponse() { StatusCode = "200", Status = true, ResponseObject = data, Message = "" };
                 return Ok(response);

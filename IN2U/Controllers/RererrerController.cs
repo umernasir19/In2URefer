@@ -218,20 +218,20 @@ namespace IN2U.Controllers
                     {
                         if (userexist.RefUserId != existingemail.RefUserId)
                         {
-                            //already email/Phone exist
+                            //already email exist
                             response = new APIResponse() { StatusCode = "409", Status = false, ResponseObject = UpdateUser, Message = "Another User Exist With this Email/Phone" };
                             return Content(HttpStatusCode.Conflict, response);
                         }
                         else
                         {
                             userexist.Email = UpdateUser.Email;
-                            userexist.Phone = UpdateUser.Phone;
-                            userexist.Password = UpdateUser.Password;
-                            userexist.HubSpotId = UpdateUser.HubSpotId;
+                            //userexist.Phone = UpdateUser.Phone;
+                            userexist.Password = ((UpdateUser.Password != null && UpdateUser.Password.Count() > 0) ? UpdateUser.Password : userexist.Password);
+                            // userexist.HubSpotId = UpdateUser.HubSpotId;
                             userexist.FirstName = UpdateUser.FirstName;
                             userexist.LastName = UpdateUser.LastName;
-                            userexist.UserGroup = UpdateUser.UserGroup;
-                            userexist.HubSpotVid = UpdateUser.HubSpotVid;
+                            //userexist.UserGroup = UpdateUser.UserGroup;
+                            //userexist.HubSpotVid = UpdateUser.HubSpotVid;
                             userexist.DateChanged = DateTime.Now;
                             _db.ReferrerInfoes.Add(userexist);
                             _db.Entry(userexist).State = System.Data.Entity.EntityState.Modified;
@@ -243,14 +243,15 @@ namespace IN2U.Controllers
                     }
                     else
                     {
-                        userexist.Email = UpdateUser.Email;
-                        userexist.Phone = UpdateUser.Phone;
-                        userexist.Password = UpdateUser.Password;
-                        userexist.HubSpotId = UpdateUser.HubSpotId;
+                        //userexist.Email = (UpdateUser.Email!=null ? UpdateUser.Email : userexist.Email);
+                        //userexist.Phone = UpdateUser.Phone.Count()>0? UpdateUser.Phone : userexist.Phone;
+                        
+                        userexist.Password = ((UpdateUser.Password!=null && UpdateUser.Password.Count()>0) ?UpdateUser.Password:userexist.Password);
+                       // userexist.HubSpotId = UpdateUser.HubSpotId;
                         userexist.FirstName = UpdateUser.FirstName;
                         userexist.LastName   = UpdateUser.LastName;
-                        userexist.UserGroup = UpdateUser.UserGroup;
-                        userexist.HubSpotVid = UpdateUser.HubSpotVid;
+                      //  userexist.UserGroup = UpdateUser.UserGroup;
+                      //  userexist.HubSpotVid = UpdateUser.HubSpotVid;
                         userexist.DateChanged = DateTime.Now;
                        
 
