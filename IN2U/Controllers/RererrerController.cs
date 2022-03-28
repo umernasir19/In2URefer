@@ -1,5 +1,6 @@
 ﻿using IN2U.Entity;
 using IN2U.Models;
+//using IN2U.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
@@ -19,9 +20,19 @@ namespace IN2U.Controllers
     {
         IN2UEntities _db;
         string URL = WebConfigurationManager.AppSettings["URL"];
+        string TokenValue = WebConfigurationManager.AppSettings["Token"];
         public bool CrossDomain(string objreq)
         {
+            var req = Request;
             var flag = objreq;
+            if (req.Headers.Contains("Token"))
+            {
+                string token = req.Headers.GetValues("Token").First();
+                if (token == TokenValue)
+                {
+                    return true;
+                }
+            }
             if (URL.Contains(objreq))
             {
                 return true;
@@ -38,6 +49,7 @@ namespace IN2U.Controllers
         public IHttpActionResult Register(ReferrerInfo Referrer)
         {
             System.Web.HttpContext context = System.Web.HttpContext.Current;
+           
             string ipAddress = context.Request.UserHostAddress;
             var Badreq = new APIResponse() { StatusCode = "502", Status = false, ResponseObject = ipAddress, Message = "Cross Domanin Not Allowed" };
             string flag = ipAddress;// .Host; 
@@ -185,7 +197,7 @@ namespace IN2U.Controllers
         [HttpPost]
         [Route("UpdateUser")]
         public IHttpActionResult UpdateUser(ReferrerInfo UpdateUser)
-        {
+         {
             System.Web.HttpContext context = System.Web.HttpContext.Current;
             string ipAddress = context.Request.UserHostAddress;
             var Badreq = new APIResponse() { StatusCode = "502", Status = false, ResponseObject = ipAddress, Message = "Cross Domanin Not Allowed" };

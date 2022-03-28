@@ -8,6 +8,10 @@ namespace IN2U.Models
     public class Referree_Worker_ViewModel
     {
         public int RefUserId { get; set; }
+
+        public string Referer_Phone { get; set; }
+        public string Worker_Phone { get; set; }
+
         //public string Email { get; set; }
         //public string Phone { get; set; }
         public string Password { get; set; }

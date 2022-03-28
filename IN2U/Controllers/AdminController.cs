@@ -16,11 +16,21 @@ namespace IN2U.Controllers
         IN2UEntities _db;
        // string[] URL = new string[] { WebConfigurationManager.AppSettings["URL"] };
         string URL = WebConfigurationManager.AppSettings["URL"] ;
+        string TokenValue = WebConfigurationManager.AppSettings["Token"];
         public bool CrossDomain(string objreq)
         {
 
-
+            var req = Request;
             var flag = objreq;
+            if (req.Headers.Contains("Token"))
+            {
+                string token = req.Headers.GetValues("Token").First();
+                if (token == TokenValue)
+                {
+                    return true;
+                }
+            }
+
             if (URL.Contains(objreq))
             {
                 return true;
@@ -44,7 +54,7 @@ namespace IN2U.Controllers
             try
             {
                 _db = new IN2UEntities();
-                var data = _db.Database.SqlQuery<Referree_Worker_ViewModel>("select * from ReferrerInfo A inner join WorkerInfo B on A.RefUSERID=B.RefUserId Order By B.DateCreated DESC")
+                var data = _db.Database.SqlQuery<Referree_Worker_ViewModel>("select A.Phone  'Referer_Phone',B.Phone  'Worker_Phone', * from ReferrerInfo A inner join WorkerInfo B on A.RefUSERID=B.RefUserId Order By B.DateCreated DESC")
                             .ToList().OrderByDescending(p=>p.DateCreated);
                 var response = new APIResponse() { StatusCode = "200", Status = true, ResponseObject = data, Message = "" };
                 return Ok(response);
@@ -90,8 +100,38 @@ namespace IN2U.Controllers
             }
         }
 
-        
 
+        [HttpGet]
+        [Route("GetWorkerrById")]
+        public IHttpActionResult GetWorkerrById(int id)
+        {
+
+            System.Web.HttpContext context = System.Web.HttpContext.Current;
+            string ipAddress = context.Request.UserHostAddress;
+            var Badreq = new APIResponse() { StatusCode = "502", Status = false, ResponseObject = ipAddress, Message = "Cross Domanin Not Allowed" };
+            string flag = ipAddress;// .Host; 
+            if (!CrossDomain(flag)) return Content(HttpStatusCode.BadGateway, Badreq);
+            try
+            {
+                _db = new IN2UEntities();
+                var data = _db.WorkerInfoes.Where(p => p.WorkerID == id).ToList();
+                if (data.Count > 0)
+                {
+                    var response = new APIResponse() { StatusCode = "200", Status = true, ResponseObject = data, Message = "" };
+                    return Ok(response);
+                }
+                else
+                {
+                    var response = new APIResponse() { StatusCode = "200", Status = true, ResponseObject = data, Message = "NO User Found" };
+                    return Ok(response);
+                }
+            }
+            catch (Exception ex)
+            {
+                var response = new APIResponse() { StatusCode = "500", Status = false, ResponseObject = "", Message = ex.Message };
+                return Ok(response);
+            }
+        }
 
 
         [HttpPost]

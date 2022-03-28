@@ -78,7 +78,6 @@ C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Soluti
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\System.Web.WebPages.Razor.xml
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\Antlr3.Runtime.pdb
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\obj\Debug\IN2U.csproj.AssemblyReference.cache
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\obj\Debug\IN2U.csproj.CoreCompileInputs.cache
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\obj\Debug\IN2U.dll
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\obj\Debug\IN2U.pdb
@@ -89,3 +88,4 @@ C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Soluti
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\System.Web.Cors.dll
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\System.Web.Http.Cors.dll
 C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\bin\System.Web.Http.Cors.xml
+C:\Users\umer.nasir\OneDrive - Aga Khan University\Desktop\Umer\VS\DEC-21\Solution\IN2U\obj\Debug\IN2U.csproj.AssemblyReference.cache
